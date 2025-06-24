@@ -1,12 +1,19 @@
 import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
-from utils import extract_features
+from app.utils import extract_features, download_file
 import tempfile
+import os
 
-# Load the trained model
+# ✅ Download model from public link
+MODEL_URL = 'https://drive.google.com/uc?export=download&id=1ECAdZ4k3OZ8g3WWfaem-YQVZWXegdIkO'  # Replace with your direct model download link
+os.makedirs('model', exist_ok=True)
+download_file(MODEL_URL, 'model/SER.keras')
+
+# ✅ Load the trained model
 model = load_model('model/SER.keras')
 
+# ✅ Emotion mapping
 emotion_mapping = {
     0: "angry",
     1: "calm",
@@ -18,11 +25,11 @@ emotion_mapping = {
     7: "surprised"
 }
 
-# Streamlit page setup
+# ✅ Streamlit page setup
 st.set_page_config(page_title="Speech Emotion Recognition", layout="centered")
 st.title("🎤 Speech Emotion Recognition Web App")
 
-# File uploader for audio files
+# ✅ File uploader for audio files
 audio_file = st.file_uploader("Upload an audio file (WAV format)", type=['wav'])
 
 if audio_file is not None:
