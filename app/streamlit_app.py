@@ -6,7 +6,7 @@ import tempfile
 import os
 
 # ✅ Download model from public link
-MODEL_URL = 'https://drive.google.com/uc?export=download&id=1ECAdZ4k3OZ8g3WWfaem-YQVZWXegdIkO'  # Replace with your direct model download link
+MODEL_URL = 'https://github.com/Piyushgoyal-09/SER/releases/download/v1.0/SER.keras'  # Replace with your direct model download link
 os.makedirs('model', exist_ok=True)
 download_file(MODEL_URL, 'model/SER.keras')
 
