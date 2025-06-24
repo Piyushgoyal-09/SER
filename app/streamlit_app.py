@@ -6,8 +6,16 @@ from app.utils import extract_features
 # Load the trained model
 model = load_model('model/SER.keras')
 
-# Emotion labels (replace these with your actual labels)
-emotion_labels = ['Neutral', 'Calm', 'Happy', 'Sad', 'Angry', 'Fearful', 'Disgust', 'Surprised']
+emotion_mapping = {
+    0: "angry",
+    1: "calm",
+    2: "disgust",
+    3: "fearful",
+    4: "happy",
+    5: "neutral",
+    6: "sad",
+    7: "surprised"
+}
 
 # Streamlit page setup
 st.set_page_config(page_title="Speech Emotion Recognition", layout="centered")
@@ -27,7 +35,7 @@ if audio_file is not None:
         # Predict emotion
         prediction = model.predict(features)
         predicted_label_index = np.argmax(prediction)
-        predicted_emotion = emotion_labels[predicted_label_index]
+        predicted_emotion = emotion_mapping[predicted_label_index]
 
         # Show the prediction
         st.markdown(f"### 🎧 Predicted Emotion: **{predicted_emotion}**")
