@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
 from app.utils import extract_features
+import tempfile
 
 # Load the trained model
 model = load_model('model/SER.keras')
@@ -25,15 +26,20 @@ st.title("🎤 Speech Emotion Recognition Web App")
 audio_file = st.file_uploader("Upload an audio file (WAV format)", type=['wav'])
 
 if audio_file is not None:
-    # Display the audio player in the app
+    # Display the audio player
     st.audio(audio_file, format='audio/wav')
 
-    # Extract features using your custom function
-    features = extract_features(audio_file)
+    # Save the uploaded file temporarily
+    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+        temp_file.write(audio_file.read())
+        temp_file_path = temp_file.name
+
+    # Extract features
+    features = extract_features(temp_file_path)
 
     if features is not None:
         # Predict emotion
-        prediction = model.predict(features)
+        prediction = model.predict(features.reshape(1, -1))
         predicted_label_index = np.argmax(prediction)
         predicted_emotion = emotion_mapping[predicted_label_index]
 
