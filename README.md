@@ -55,3 +55,36 @@ To develop a speech emotion recognition system that:
 ### 3. **Model Architecture**
 - Deep learning model based on a CNN-BiLSTM-Attention architecture.
 - Trained to classify audi
+
+---
+
+## 📈 Model Performance
+*(Update these based on your notebook results)*  
+- **Training Accuracy:** _Add your training accuracy here_  
+- **Validation Accuracy:** _Add your validation accuracy here_
+
+---
+
+## 🛠️ Tech Stack
+- Python
+- TensorFlow / Keras
+- Librosa (audio processing)
+- Scikit-learn
+- Streamlit (web deployment)
+
+---
+
+## 🖥️ Running the Project Locally
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Piyushgoyal-09/SER.git
+```
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+### 3. Run the Streamlit app
+```bash
+streamlit run app/streamlit_app.py
+```
