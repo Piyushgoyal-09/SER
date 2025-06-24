@@ -1,6 +1,6 @@
 import librosa
 import numpy as np
-import pickle
+from joblib import load
 import os
 import requests
 
