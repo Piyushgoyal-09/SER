@@ -6,7 +6,7 @@ import pickle
 with open('model/scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
 
-with open('model/pca.pkl', 'rb') as f:
+with open('model/PCA.pkl', 'rb') as f:
     pca = pickle.load(f)
 
 def extract_features(audio_file, duration=3, sr=22050):
