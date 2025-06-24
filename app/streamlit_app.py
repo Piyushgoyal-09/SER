@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
-from app.utils import extract_features, download_file
+from utils import extract_features, download_file
 import tempfile
 import os
 
