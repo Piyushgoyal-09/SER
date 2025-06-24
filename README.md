@@ -6,7 +6,7 @@ A web-based application that identifies emotions from audio files using machine 
 ---
 
 ## 🚀 Live link
-🌐 View Deployed App on Streamlit Cloud]](https://eqgcxavrsgmoaxgwxmcubn.streamlit.app(#)  
+🌐 View Deployed App on Streamlit Cloud( https://eqgcxavrsgmoaxgwxmcubn.streamlit.app ) (#)  
 *(Replace `#` with your actual Streamlit Cloud URL after deployment)*
 
 ---
