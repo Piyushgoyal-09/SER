@@ -15,8 +15,8 @@ def download_file(url, local_path):
         print(f"{local_path} already exists. Skipping download.")
 
 # ✅ Replace these URLs with your actual direct download links
-SCALER_URL = 'https://drive.google.com/uc?export=download&id=1zWCW4Pz-yVHnms5vMdnNHL2czIk_TIW_'
-PCA_URL = 'https://drive.google.com/uc?export=download&id=1_ztguBJ9aolFoomzA6M28ErNvrtwGLFW'
+SCALER_URL = 'https://github.com/Piyushgoyal-09/SER/releases/download/v1.0/scaler.pkl'
+PCA_URL = 'https://github.com/Piyushgoyal-09/SER/releases/download/v1.0/PCA.pkl'
 
 # ✅ Make sure model directory exists
 os.makedirs('model', exist_ok=True)
