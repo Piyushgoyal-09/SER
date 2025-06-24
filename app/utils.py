@@ -26,11 +26,8 @@ download_file(SCALER_URL, 'model/scaler.pkl')
 download_file(PCA_URL, 'model/PCA.pkl')
 
 # ✅ Load Scaler and PCA after download
-with open('model/scaler.pkl', 'rb') as f:
-    scaler = pickle.load(f)
-
-with open('model/PCA.pkl', 'rb') as f:
-    pca = pickle.load(f)
+scaler = load('model/scaler.pkl')
+pca = load('model/PCA.pkl')
 
 # ✅ Feature Extraction Function
 def extract_features(audio_file, duration=3, sr=22050):
