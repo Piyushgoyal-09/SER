@@ -4,4 +4,4 @@ librosa
 numpy
 scikit-learn
 soundfile
-request
+requests
